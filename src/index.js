@@ -9,6 +9,7 @@ import rootEpic from './epics';
 import { createEpicMiddleware } from 'redux-observable';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import 'todomvc-app-css/index.css';
+import './style.css';
 
 const epicMiddleware = createEpicMiddleware();
 
