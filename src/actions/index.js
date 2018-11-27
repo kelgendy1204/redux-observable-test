@@ -10,3 +10,5 @@ export const setVisibilityFilter = filter => ({ type: types.SET_VISIBILITY_FILTE
 export const fetchTodo = () => ({ type: types.FETCH_TODO });
 export const fetchTodoFulfilled = text => ({ type: types.FETCH_TODO_FULFILLED, text });
 export const cancelFetchTodo = text => ({ type: types.FETCH_TODO_CANCELLED });
+export const fetchTodoSync = () => ({ type: types.FETCH_TODO_SYNC });
+export const fetchTodoSyncFulfilled = text => ({ type: types.FETCH_TODO_SYNC_FULFILLED, text });
