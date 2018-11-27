@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import MainFooter from '../components/MainFooter';
-import { fetchTodo } from '../actions';
+import { fetchTodo, cancelFetchTodo } from '../actions';
 
 export default connect(
     null,
-    { fetchTodo }
+    { fetchTodo, cancelFetchTodo }
 )(MainFooter);
