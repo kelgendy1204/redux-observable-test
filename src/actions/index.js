@@ -12,3 +12,5 @@ export const fetchTodoFulfilled = text => ({ type: types.FETCH_TODO_FULFILLED, t
 export const cancelFetchTodo = text => ({ type: types.FETCH_TODO_CANCELLED });
 export const fetchTodoSync = () => ({ type: types.FETCH_TODO_SYNC });
 export const fetchTodoSyncFulfilled = text => ({ type: types.FETCH_TODO_SYNC_FULFILLED, text });
+export const concatFetchTodo = () => ({ type: types.CONCAT_FETCH_TODO });
+export const concatFetchTodoFulfilled = text => ({ type: types.CONCAT_FETCH_TODO_FULFILLED, text });

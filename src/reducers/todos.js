@@ -6,6 +6,7 @@ import {
     COMPLETE_ALL_TODOS,
     CLEAR_COMPLETED,
     FETCH_TODO_FULFILLED,
+    CONCAT_FETCH_TODO_FULFILLED,
     FETCH_TODO_SYNC_FULFILLED
 } from '../constants/ActionTypes';
 
@@ -38,6 +39,7 @@ export default function todos(state = initialState, action) {
 
         case FETCH_TODO_FULFILLED:
         case FETCH_TODO_SYNC_FULFILLED:
+        case CONCAT_FETCH_TODO_FULFILLED:
             return [
                 ...state,
                 {
