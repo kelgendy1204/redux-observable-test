@@ -7,13 +7,19 @@ import App from './components/App';
 import reducer from './reducers';
 import rootEpic from './epics';
 import { createEpicMiddleware } from 'redux-observable';
+import createReduxWaitForMiddleware from 'redux-wait-for-action';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import 'todomvc-app-css/index.css';
 import './style.css';
+// import './playground';
 
 const epicMiddleware = createEpicMiddleware();
+const waitForActionMiddleware = createReduxWaitForMiddleware();
 
-const store = createStore(reducer, composeWithDevTools(applyMiddleware(logger, epicMiddleware)));
+const store = createStore(
+    reducer,
+    composeWithDevTools(applyMiddleware(logger, epicMiddleware, waitForActionMiddleware))
+);
 
 epicMiddleware.run(rootEpic);
 

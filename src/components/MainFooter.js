@@ -3,16 +3,36 @@ import PropTypes from 'prop-types';
 
 const MainFooter = ({ fetchTodo, cancelFetchTodo, fetchTodoSync, concatFetchTodo }) => (
     <footer className="main">
-        <button className="pure-material-button-contained" style={{ marginLeft: 5 , marginBottom: 5 }} onClick={fetchTodo}>
+        <button
+            className="pure-material-button-contained"
+            style={{ marginLeft: 5, marginBottom: 5 }}
+            onClick={fetchTodo}
+        >
             Fetch Todo
         </button>
-        <button className="pure-material-button-contained" style={{ marginLeft: 5 , marginBottom: 5 }} onClick={cancelFetchTodo}>
+        <button
+            className="pure-material-button-contained"
+            style={{ marginLeft: 5, marginBottom: 5 }}
+            onClick={cancelFetchTodo}
+        >
             Cancel Fetch Todo
         </button>
-        <button className="pure-material-button-contained" style={{ marginLeft: 5, marginBottom: 5 }} onClick={fetchTodoSync}>
+        <button
+            className="pure-material-button-contained"
+            style={{ marginLeft: 5, marginBottom: 5 }}
+            onClick={() => {
+                fetchTodoSync(() => {
+                    console.log('Todo fetched!');
+                });
+            }}
+        >
             Fetch todos sync
         </button>
-        <button className="pure-material-button-contained" style={{ marginLeft: 5, marginBottom: 5 }} onClick={concatFetchTodo}>
+        <button
+            className="pure-material-button-contained"
+            style={{ marginLeft: 5, marginBottom: 5 }}
+            onClick={concatFetchTodo}
+        >
             Concat Fetch todos
         </button>
     </footer>

@@ -4,5 +4,12 @@ import { fetchTodo, cancelFetchTodo, fetchTodoSync, concatFetchTodo } from '../a
 
 export default connect(
     null,
-    { fetchTodo, fetchTodoSync, cancelFetchTodo, concatFetchTodo }
+    dispatch => {
+        return {
+            fetchTodo: () => dispatch(fetchTodo()),
+            fetchTodoSync: cb => dispatch(fetchTodoSync()).then(cb),
+            cancelFetchTodo: () => dispatch(cancelFetchTodo()),
+            concatFetchTodo: cb => dispatch(concatFetchTodo()).then(cb),
+        };
+    }
 )(MainFooter);
