@@ -9,7 +9,10 @@ export const completeAllTodos = () => ({ type: types.COMPLETE_ALL_TODOS });
 export const clearCompleted = () => ({ type: types.CLEAR_COMPLETED });
 export const setVisibilityFilter = filter => ({ type: types.SET_VISIBILITY_FILTER, filter });
 
-export const fetchTodo = () => ({ type: types.FETCH_TODO });
+export const fetchTodo = () => ({
+    type: types.FETCH_TODO,
+    [ WAIT_FOR_ACTION ]: types.FETCH_TODO_FULFILLED,
+});
 export const fetchTodoFulfilled = text => ({ type: types.FETCH_TODO_FULFILLED, text });
 
 export const cancelFetchTodo = text => ({ type: types.FETCH_TODO_CANCELLED });
@@ -20,5 +23,8 @@ export const fetchTodoSync = () => ({
 });
 export const fetchTodoSyncFulfilled = text => ({ type: types.FETCH_TODO_SYNC_FULFILLED, text });
 
-export const concatFetchTodo = () => ({ type: types.CONCAT_FETCH_TODO });
+export const concatFetchTodo = () => ({
+    type: types.CONCAT_FETCH_TODO,
+    [ WAIT_FOR_ACTION ]: types.CONCAT_FETCH_TODO_FULFILLED,
+});
 export const concatFetchTodoFulfilled = text => ({ type: types.CONCAT_FETCH_TODO_FULFILLED, text });
